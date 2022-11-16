@@ -17,8 +17,8 @@ def start(message):
     markup.add(btn1)
     bot.send_message(message.chat.id,
                      text="Привет, {0.first_name}! Список команд: \n"
-                          "1. /makeadmin username. Сделать username админом \n"
-                          "2. /ban username. Забанить username \n"
+                          "1. /makeadmin (в ответ на сообщение пользователя). Сделать админом \n"
+                          "2. /ban (в ответ на сообщение пользователя). Забанить \n"
                           "3. /stat. Статистика по чату: сколько людей и админов. \n".format(
                          message.from_user), reply_markup=markup)
 
