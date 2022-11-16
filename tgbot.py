@@ -6,7 +6,7 @@ def extract_arg(arg):
     return arg.split()[1:]
 
 
-TOKEN = '5655668531:AAGqmGtTo_scb09lCZiAEfnUwWWNp5KA1HU'
+TOKEN = ''  # приватные данные ^^
 bot = telebot.TeleBot(TOKEN)
 
 
@@ -25,14 +25,7 @@ def start(message):
 
 @bot.message_handler(commands=['ban'])
 def ban(message):
-    # arr = (bot.get_chat_administrators(message.chat.id))
-    # for x in arr:
-    #     print(message.reply_to_message.from_user.id)
-    #     print(type(x), x)
-
     bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)
-    # bot.ban_chat_member(message.chat.id, user_name[0])
-
     bot.send_message(message.chat.id,
                      text="@{} забанен".format(message.reply_to_message.from_user.username))
 
